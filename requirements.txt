@@ -22,3 +22,4 @@ langserve
 sse_starlette
 arxiv
 wikipedia
+duckduckgo-search
