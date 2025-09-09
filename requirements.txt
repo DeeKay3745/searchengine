@@ -22,5 +22,5 @@ langserve
 sse_starlette
 arxiv
 wikipedia
-
+sqlite3
 duckduckgo-search
