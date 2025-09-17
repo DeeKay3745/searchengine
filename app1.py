@@ -50,7 +50,11 @@ Try more Langchain streamlit Agent examples at [github.com/langchain-ai/streamli
 groq_api_key = os.getenv("GROQ_API_KEY")
 if not groq_api_key:
     raise ValueError("GROQ_API_KEY not set. Please add it to your environment.")
-llm =ChatGroq(groq_api_key= groq_api_key, model_name="llama-3.1-8b-instant", streaming=True)
+llm = ChatGroq(
+    model="llama-3.1-8b-instant",
+    api_key=groq_api_key
+)
+# llm =ChatGroq(groq_api_key= groq_api_key, model_name="llama-3.1-8b-instant", streaming=True)
 # Initialize the agent
 tools = [search,arxiv,wiki]
 search_agent = initialize_agent(
