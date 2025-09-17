@@ -47,7 +47,9 @@ st.title("Langchain -Chat with Search")
 In this example, we're using 'StreamlitCallbackHandler' to display the thoughts and actions of an agent in an interactive Streamlit app.
 Try more Langchain streamlit Agent examples at [github.com/langchain-ai/streamlit-agent](https://github.com/langchain-ai/streamlit-agent).
 """
-groq_api_key = os.getenv("GROQ_API_KEY")
+# Try both environment and Streamlit secrets
+groq_api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+# groq_api_key = os.getenv("GROQ_API_KEY")
 if not groq_api_key:
     raise ValueError("GROQ_API_KEY not set. Please add it to your environment.")
 llm = ChatGroq(
