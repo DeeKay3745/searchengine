@@ -4,6 +4,8 @@ from langchain.agents import initialize_agent, AgentType
 from langchain_community.utilities  import ArxivAPIWrapper, WikipediaAPIWrapper
 from langchain_community.tools import ArxivQueryRun, WikipediaQueryRun
 from langchain_community.tools import DuckDuckGoSearchRun
+
+
 #from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 import os
@@ -38,7 +40,8 @@ arxiv =ArxivQueryRun(api_wrapper = arxiv_wrapper)
 api_wrapper  = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=200)
 wiki = WikipediaQueryRun(api_wrapper=api_wrapper)
 
-search =DuckDuckGoSearchRun(name = "Search")
+search = DuckDuckGoSearchRun(name="Search")
+# search =DuckDuckGoSearchRun(name = "Search")
 st.title("Langchain -Chat with Search")
 """
 In this example, we're using 'StreamlitCallbackHandler' to display the thoughts and actions of an agent in an interactive Streamlit app.
